@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class PatientDataController {
     public String listPatientData(@PathVariable int id, Model model){
         List<PatientData> patientDataList = new LinkedList<>();
         try {
-            Reader reader = Files.newBufferedReader(Path.of("src/main/resources/databases/data/data"+id+".csv"));
+            Reader reader = Files.newBufferedReader(Paths.get("src/main/resources/databases/data/data"+id+".csv"));
             // create csv reader
             CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
             String[] record;
