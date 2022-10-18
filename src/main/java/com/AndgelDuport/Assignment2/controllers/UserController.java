@@ -33,7 +33,7 @@ public class UserController {
 
 
     @GetMapping("/user")
-    public Map<String, Object> user(@AuthenticationPrincipal OAuth2User connected) {
+    @ResponseBody Map<String, Object> user(@AuthenticationPrincipal OAuth2User connected) {
         return Collections.singletonMap("Attributes", (connected.getAttributes()));
     }
 
