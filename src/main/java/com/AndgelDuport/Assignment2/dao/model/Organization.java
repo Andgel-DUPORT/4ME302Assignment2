@@ -1,4 +1,4 @@
-package com.AndgelDuport.Assignment2.model;
+package com.AndgelDuport.Assignment2.dao.model;
 
 import lombok.Data;
 
@@ -11,13 +11,13 @@ public class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "organizationID", nullable = false)
-    private Long organizationID;
+    private Integer organizationID;
 
-    public Long getOrganizationID() {
+    public Integer getOrganizationID() {
         return organizationID;
     }
 
-    public void setOrganizationID(Long organizationID) {
+    public void setOrganizationID(Integer organizationID) {
         this.organizationID = organizationID;
     }
 

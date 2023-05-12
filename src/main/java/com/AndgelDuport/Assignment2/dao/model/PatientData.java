@@ -1,9 +1,7 @@
-package com.AndgelDuport.Assignment2.model;
+package com.AndgelDuport.Assignment2.dao.model;
 
 import com.opencsv.bean.CsvBindByName;
 import lombok.Data;
-
-import javax.persistence.criteria.CriteriaBuilder;
 
 @Data
 public class PatientData {

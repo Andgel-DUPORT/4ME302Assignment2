@@ -1,20 +1,19 @@
 package com.AndgelDuport.Assignment2.controllers;
 
-import com.AndgelDuport.Assignment2.model.PatientData;
+import com.AndgelDuport.Assignment2.dao.model.PatientData;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,6 +21,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/data")
+@PreAuthorize("hasAnyRole('ADMIN','PHYSICIST', 'RESEARCHER', 'JUNIOR_RESEARCHER')")
 public class PatientDataController {
 
     @GetMapping("/patient/{id}")

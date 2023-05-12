@@ -1,9 +1,10 @@
 package com.AndgelDuport.Assignment2.controllers;
 
+import com.AndgelDuport.Assignment2.dao.model.Test;
+import com.AndgelDuport.Assignment2.dao.model.TestSession;
 import com.AndgelDuport.Assignment2.dao.repositories.TestRepository;
 import com.AndgelDuport.Assignment2.dao.repositories.TestSessionRepository;
-import com.AndgelDuport.Assignment2.model.Test;
-import com.AndgelDuport.Assignment2.model.TestSession;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/test")
+@PreAuthorize("hasAnyRole('ADMIN','PATIENT')")
 public class TestController {
     private final TestRepository testRepository;
     private final TestSessionRepository testSessionRepository;

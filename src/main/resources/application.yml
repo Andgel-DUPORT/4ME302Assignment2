@@ -9,6 +9,18 @@ spring:
           google:
             client-id: 711580776880-p2g9gffp1sdtd53v8mlck2p4r6nr5bsf.apps.googleusercontent.com
             client-secret: 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
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
+            scope:
+              - email
+              - profile
 #          twitter:
 #            client-id: 6dRSHEYYTuQQINkB5NhwirKqW
 #            client-secret: Z1r6Yg5HUZRukxij1lz3pasCvbfyYgCqLZaSrLivWZfi66P7n9
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+
+

@@ -1,4 +1,4 @@
-package com.AndgelDuport.Assignment2.model;
+package com.AndgelDuport.Assignment2.dao.model;
 
 import lombok.Data;
 

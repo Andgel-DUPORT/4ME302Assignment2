@@ -1,14 +1,14 @@
-package com.AndgelDuport.Assignment2.model;
+package com.AndgelDuport.Assignment2.dao.model;
 
 import lombok.Data;
 
 @Data
 public class UserRole {
 
-    private Long id;
+    private Integer id;
     private String username;
     private String email;
-    private Long Role_IDrole;
+    private Integer Role_IDrole;
     private Integer Organization;
     private Float Lat;
     private Float Long;
@@ -16,7 +16,7 @@ public class UserRole {
 
     private String organizationName;
 
-    public UserRole(java.lang.Long id, String username, String email, java.lang.Long role_IDrole, Integer organization, Float lat, Float aLong, String roleName, String organizationName) {
+    public UserRole(Integer id, String username, String email, Integer role_IDrole, Integer organization, Float lat, Float aLong, String roleName, String organizationName) {
         this.id = id;
         this.username = username;
         this.email = email;

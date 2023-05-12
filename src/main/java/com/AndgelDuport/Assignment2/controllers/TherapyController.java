@@ -1,10 +1,10 @@
 package com.AndgelDuport.Assignment2.controllers;
 
+import com.AndgelDuport.Assignment2.dao.model.Therapy;
+import com.AndgelDuport.Assignment2.dao.model.TherapyList;
 import com.AndgelDuport.Assignment2.dao.repositories.TherapyListRepository;
 import com.AndgelDuport.Assignment2.dao.repositories.TherapyRepository;
-import com.AndgelDuport.Assignment2.model.Test;
-import com.AndgelDuport.Assignment2.model.Therapy;
-import com.AndgelDuport.Assignment2.model.TherapyList;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
+@PreAuthorize("hasAnyAuthority('ADMIN', 'PHYSICIAN', 'RESEARCHER', 'JUNIOR_RESEARCHER')")
 @RequestMapping("/therapy")
 public class TherapyController {
     private final TherapyRepository therapyRepository;

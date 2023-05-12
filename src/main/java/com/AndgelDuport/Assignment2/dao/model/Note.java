@@ -1,4 +1,4 @@
-package com.AndgelDuport.Assignment2.model;
+package com.AndgelDuport.Assignment2.dao.model;
 
 import lombok.Data;
 
@@ -6,11 +6,11 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "therapy")
-public class Therapy {
+@Table(name = "note")
+public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "therapyID", nullable = false)
+    @Column(name = "noteID", nullable = false)
     private Long id;
 
     public Long getId() {
@@ -21,12 +21,13 @@ public class Therapy {
         this.id = id;
     }
 
-    @Column(name = "User_IDpatient")
-    private Integer User_IDpatient;
+    @Column(name = "Test_Session_IDtest_session")
+    private Integer Test_Session_IDtest_session;
+
+    @Column(name = "note")
+    private String note;
 
     @Column(name = "User_IDmed")
     private Integer User_IDmed;
 
-    @Column(name = "therapy_list_idtherapylist")
-    private Integer TherapyList_IDtherapylist;
 }

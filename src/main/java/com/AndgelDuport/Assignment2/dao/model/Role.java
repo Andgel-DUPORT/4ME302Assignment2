@@ -1,4 +1,4 @@
-package com.AndgelDuport.Assignment2.model;
+package com.AndgelDuport.Assignment2.dao.model;
 
 import lombok.Data;
 
@@ -11,15 +11,7 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "roleID", nullable = false)
-    private Long roleID;
-
-    public Long getRoleID() {
-        return roleID;
-    }
-
-    public void setRoleID(Long roleID) {
-        this.roleID = roleID;
-    }
+    private Integer roleID;
 
     @Column(name = "name")
     private String name;
